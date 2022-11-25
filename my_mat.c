@@ -32,4 +32,7 @@ int initMat(void)
     return 0;
 }
 
-int 
+int routeExist(int mat[][])
+{
+    
+}
