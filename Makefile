@@ -6,22 +6,20 @@ MAIN=main.o
 MYMAT=my_mat.o
 FLAGS=-Wall
 
-# Rules -------------------------------------------------
+# Targets -----------------------------------------------
 
 all: connections
-
-# Targets -----------------------------------------------
 
 connections: $(MAIN) my_mat.a # the main file. using the static liabrary
 	$(CC) $(FLAGS) -o mains $(MAIN) libclassrec.a -lm
 
-my_mat.a: $(MYMAT) # makes the static liabrary for recursion
+my_mat.a: $(MYMAT) # makes the static liabrary from the object file
 	$(AR) -rcs my_mat.a $(MYMAT)
 
-$(MAIN): main.c my_mat.h
+$(MAIN): main.c my_mat.h # the main object file
 	$(CC) $(FLAGS) -fPIC -c main.c -lm
 
-$(MYMAT): my_mat.c my_mat.h
+$(MYMAT): my_mat.c my_mat.h # makes the object file from the source file
 	$(CC) $(FLAGS) -fPIC -c my_mat.c -lm
 
 .PHONY: clean all
