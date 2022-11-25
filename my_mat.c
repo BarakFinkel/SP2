@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <math.h>
 
+
 //The function used for initializing the matrice:
 
-int initMat(void)
+int initMat(int *mat, int length)
 {
-    int mat[4][4];
     
     for(int i=0; i<4; i++ ){
         
         int from = 0;
 
-        for(int j=from; i<until ;j++){
+        for(int j=from; i<4 ;j++){
             
             if (i==j){ 
                 mat[i][j] = 0;
@@ -34,5 +34,5 @@ int initMat(void)
 
 int routeExist(int mat[][])
 {
-    
+
 }
