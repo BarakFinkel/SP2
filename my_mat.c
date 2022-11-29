@@ -7,10 +7,8 @@ int initMat(int mat[4][4])
 {
     
     for(int i=0; i<4; i++ ){
-        
-        int from = 0;
 
-        for(int j=from; i<4 ;j++){
+        for(int j=i; j<4 ;j++){
             
             if (i==j){ 
                 mat[i][j] = 0;
@@ -25,38 +23,22 @@ int initMat(int mat[4][4])
             mat[j][i] = temp;
         }
 
-        from++;
-    }
-
-    return 0;
-}
-
-int initBoolMat(int bmat[4][4])
-{
-    for(int i=0; i<4; i++){
         
-        for(int j=0; i<4; i++){
-
-            bmat[i][j] = 0;
-        }
     }
-
 
     return 0;
 }
 
-int routeExist(int mat[4][4], int bmat[4][4],int i, int j)
+int routeExist(int mat[4][4], int barr[4], int i, int j)
 {
-    if( mat[i][j] != 0) {return 1;}
+    barr[i] = 1;                           
 
+    if( mat[i][j] != 0) {return 1;}
+    
     for(int k=0; k < 4; k++ )
     {
-        if (k==i) {continue;}
-        if ( (mat[i][k] != 0) && (bmat[i][k] == 0) ) {
-            
-            bmat[i][k] = 1;
-            routeExist(mat, bmat, k, j);
-        }
+        if (k==i)                                  { continue; }
+        if ( (mat[i][k] != 0) && (barr[k] == 0) )  { routeExist(mat, barr, k, j); } 
     }
 
     return 0;
