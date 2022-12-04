@@ -1,4 +1,4 @@
-#include <"my_mat.h">
+#include "my_mat.h"
 #include <stdio.h>
 int main(){
     char c = ' ';
@@ -17,4 +17,4 @@ int main(){
     return 0;
 }
 
-# Path: /mnt/c/Users/Selfisher/Documents/GitHub/SP2
+// Path: /mnt/c/Users/Selfisher/Documents/GitHub/SP2
