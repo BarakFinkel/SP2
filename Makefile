@@ -11,7 +11,7 @@ FLAGS=-Wall
 all: connections
 
 connections: $(MAIN) my_mat.a # the main file. using the static liabrary
-	$(CC) $(FLAGS) -o mains $(MAIN) libclassrec.a -lm
+	$(CC) $(FLAGS) -o mains $(MAIN) -lm
 
 my_mat.a: $(MYMAT) # makes the static liabrary from the object file
 	$(AR) -rcs my_mat.a $(MYMAT)
@@ -25,4 +25,4 @@ $(MYMAT): my_mat.c my_mat.h # makes the object file from the source file
 .PHONY: clean all
 
 clean:
-	rm -f *.a *.o connections
+	rm -f *.a *.o mains

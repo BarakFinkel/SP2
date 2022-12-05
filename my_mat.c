@@ -1,32 +1,28 @@
 #include <stdio.h>
-#define N 10
+#define N 4
 
 //The function used for initializing the matrice:
 
-int initMat(int mat[N][N])
+int[][] initMat(void)
 {
+    int mat[N][N];
     
     for(int i=0; i<N; i++ ){
-
+        
         for(int j=i; j<N ;j++){
             
             if (i==j){ 
                 mat[i][j] = 0;
                 continue;
             }    
-
             printf("Please enter the value of mat[%d][%d] and mat[%d][%d]: ",i,j,j,i);
-
             int temp;
-            scanf("%d", temp);
+            scanf("%d", &temp);
             mat[i][j] = temp;
             mat[j][i] = temp;
         }
-
-        
     }
-
-    return 0;
+    return mat;
 }
 
 int routeExist(int mat[N][N], int barr[N], int i, int j)
@@ -51,28 +47,46 @@ int routeExist(int mat[N][N], int barr[N], int i, int j)
 
 int shortRoute(int mat[N][N], int a, int b)
 {
-    int shortmat[N][N] = mat;
-    
+    int shortmat[N][N];
+    for(int i=0; i<N; i++ ){
+        for(int j=0; j<N ;j++){
+            shortmat[i][j] = mat[i][j];
+        }
+    }
+
     for(int k=0; k<N; k++)
     {
-        for(int i=1; i<N; i++)
+        for(int i=0; i<N; i++)
         {
-            for(int j=i; j<N; j++)
+            for(int j= i + 1; j<N; j++)
             {
-                if( (shortmat[i][j] == 0 && shortmat[i][k] == 0) && shortmat[k][i] == 0 ) { shortmat[i][j] = 0; }
+                if( (shortmat[i][j] == 0) )
+                {
+                    if ((shortmat[i][k] != 0) && (shortmat[k][j] != 0))
+                    {
+                        shortmat[i][j] = shortmat[i][k] + shortmat[k][j];
+                        shortmat[j][i] = shortmat[i][k] + shortmat[k][j];
+                    }
+                }
+                
                 else
                 {
-                    if( shortmat[i][j] > shortmat[i][k] + shortmat[k][i] )
+                    if ((shortmat[i][k] != 0) && (shortmat[k][j] != 0))
                     {
-                        shortmat[i][j] = shortmat[i][k] + shortmat[k][i];
-                    } 
-                } 
+                        if( shortmat[i][j] > (shortmat[i][k] + shortmat[k][j]) )
+                        {
+                            shortmat[i][j] = shortmat[i][k] + shortmat[k][j];
+                        }
+                    }
+                }
+
+       
             }
         }
     }
 
-    if(shortmat[a][b] == 0 ) { printf(-1+"\n"); } 
-    else                     { printf(shortmat[a][b]+"\n"); }
+    if(shortmat[a][b] == 0 ) { printf("%d\n",-1); } 
+    else                     { printf("%d\n", shortmat[a][b]); }
 
     return 0;
 }

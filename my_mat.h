@@ -1,7 +1,7 @@
 #include <stdio.h>
-#define N 10
+#define N 4
 
-int initMat(int mat[N][N]);
+int initMat(void);
 
 int routeExist(int mat[N][N], int barr[N], int i, int j);
 
