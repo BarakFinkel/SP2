@@ -3,7 +3,7 @@
 
 //The function used for initializing the matrice:
 
-void initMat(int mat[N][N])
+int initMat(int mat[N][N])
 {
     
     for(int i=0; i<N; i++){
@@ -21,9 +21,11 @@ void initMat(int mat[N][N])
             mat[j][i] = temp;
         }
     }
+
+    return 0;
 }
 
-void setShortMat(int mat[N][N], int shortmat[N][N])
+int setShortMat(int mat[N][N], int shortmat[N][N])
 {
     for( int i=0 ; i<N ; i++ )
     {
@@ -62,16 +64,22 @@ void setShortMat(int mat[N][N], int shortmat[N][N])
             }
         }
     }
+
+    return 0;
 }
 
-void routeExist(int shortmat[N][N], int a, int b)
+int routeExist(int shortmat[N][N], int a, int b)
 {
     if ( shortmat[a][b] == 0 )  { printf("False."); }
     else                        { printf("False."); }
+
+    return 0;
 }
 
-void shortRoute(int shortmat[N][N], int a, int b)
+int shortRoute(int shortmat[N][N], int a, int b)
 {
     if ( shortmat[a][b] == 0 ) { printf("%d\n", -1); } 
     else                       { printf("%d\n", shortmat[a][b]); }
+
+    return 0;
 }

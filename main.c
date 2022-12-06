@@ -7,28 +7,38 @@ int main(void){
     char c = ' ';
     int mat[N][N];
     int shortmat[N][N];
+    int temp;           // variable just for returning 0 values when a function ends.
 
-    while(c != 'D'){
+    while(c != 'D')
+    {
         
         scanf("%c", &c);
+
         if (c == 'A')
         {
             printf("go into first method");
-            initMat(mat);
-            setShortMat(mat, shortmat);
+            temp = initMat(mat);
+            temp = setShortMat(mat, shortmat);
         }
         
-        else if (c == 'B'){
+        else if (c == 'B')
+        {       
             printf("go into second method");
             int i,j;
             scanf('%d',&i);
             scanf('%d',&j);
-            
 
+            temp = routeExist(shortmat, i, j);
         }
         
-        else if (c == 'C'){
+        else if (c == 'C')
+        {
             printf("go into third method");
+            int i,j;
+            scanf('%d',&i);
+            scanf('%d',&j);
+
+            temp = shortRoute(shortmat, i, j);
         }
     }
     
