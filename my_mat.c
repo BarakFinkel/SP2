@@ -3,9 +3,8 @@
 
 //The function used for initializing the matrice:
 
-int[][] initMat(void)
+void initMat(int mat[N][N])
 {
-    int mat[N][N];
     
     for(int i=0; i<N; i++){
         
@@ -22,32 +21,10 @@ int[][] initMat(void)
             mat[j][i] = temp;
         }
     }
-    return mat;
 }
 
-int routeExist(int mat[N][N], int barr[N], int i, int j)
+void setShortMat(int mat[N][N], int shortmat[N][N])
 {
-    barr[i] = 1;                           
-
-    if( mat[i][j] != 0 ) 
-    {
-        printf("True\n");
-        return 1;
-    }
-    
-    for( int k=0 ; k < N ; k++ )
-    {
-        if (k==i)                                      { continue; }
-        if ( ( mat[i][k] != 0 ) && ( barr[k] == 0 ) )  { routeExist( mat, barr, k, j ); } 
-    }
-
-    printf("False\n");
-    return 0;
-}
-
-int shortRoute(int mat[N][N], int a, int b)
-{
-    int shortmat[N][N];
     for( int i=0 ; i<N ; i++ )
     {
         for( int j=0 ; j<N ; j++)
@@ -85,9 +62,16 @@ int shortRoute(int mat[N][N], int a, int b)
             }
         }
     }
+}
 
-    if(shortmat[a][b] == 0 ) { printf("%d\n",-1); } 
-    else                     { printf("%d\n", shortmat[a][b]); }
+void routeExist(int shortmat[N][N], int a, int b)
+{
+    if ( shortmat[a][b] == 0 )  { printf("False."); }
+    else                        { printf("False."); }
+}
 
-    return 0;
+void shortRoute(int shortmat[N][N], int a, int b)
+{
+    if ( shortmat[a][b] == 0 ) { printf("%d\n", -1); } 
+    else                       { printf("%d\n", shortmat[a][b]); }
 }

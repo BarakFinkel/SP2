@@ -1,8 +1,11 @@
 #include <stdio.h>
 #define N 4
 
-int initMat(void);
+void initMat(int mat[N][N]);
 
-int routeExist(int mat[N][N], int barr[N], int i, int j);
+void setShortMat(int mat[N][N], int shortmat[N][N]);
 
-int shortRoute(int mat[N][N], int a, int b);
+void routeExist(int shortmat[N][N], int a, int b);
+
+void shortRoute(int shortmat[N][N], int a, int b);
+
