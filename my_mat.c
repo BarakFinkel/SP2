@@ -3,7 +3,7 @@
 
 //The function used for initializing the matrice:
 
-int initMat(int** mat)
+int initMat(int mat[][10])
 {
     
     for(int i=0; i<10; i++){
@@ -14,7 +14,7 @@ int initMat(int** mat)
                 mat[i][j] = 0;
                 continue;
             }    
-            printf("Please enter the value of mat[%d][%d] and mat[%d][%d]: ",i,j,j,i);
+            printf("Please enter the value of mat[%d][%d] / mat[%d][%d]: ",i,j,j,i);
             int temp;
             scanf("%d", &temp);
             mat[i][j] = temp;
@@ -25,7 +25,7 @@ int initMat(int** mat)
     return 0;
 }
 
-int setShortMat(int mat[10][10], int shortmat[10][10])
+int setShortMat(int mat[][10], int shortmat[][10])
 {
     for( int i=0 ; i<10 ; i++ )
     {
@@ -68,7 +68,7 @@ int setShortMat(int mat[10][10], int shortmat[10][10])
     return 0;
 }
 
-int routeExist(int shortmat[10][10], int a, int b)
+int routeExist(int shortmat[][10], int a, int b)
 {
     if ( shortmat[a][b] == 0 )  { printf("False."); }
     else                        { printf("False."); }
@@ -76,7 +76,7 @@ int routeExist(int shortmat[10][10], int a, int b)
     return 0;
 }
 
-int shortRoute(int shortmat[10][10], int a, int b)
+int shortRoute(int shortmat[][10], int a, int b)
 {
     if ( shortmat[a][b] == 0 ) { printf("%d\n", -1); } 
     else                       { printf("%d\n", shortmat[a][b]); }
