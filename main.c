@@ -9,21 +9,17 @@ int main(void){
     int temp;             // variable just for returning 0 values when a function ends.
 
     while(c != 'D')
-    {
-        
-        printf("Please enter your choice: ");
+    {       
         scanf("%c",&c);
 
         if (c == 'A')
         {
-            printf("go into first method");
             temp = initMat(mat);
             temp = setShortMat(mat, shortmat);
         } 
         
         else if (c == 'B')
         {       
-            printf("go into second method");
             int i,j;
             scanf("%d",&i);
             scanf("%d",&j);
@@ -33,7 +29,6 @@ int main(void){
         
         else if (c == 'C')
         {
-            printf("go into third method");
             int i,j;
             scanf("%d",&i);
             scanf("%d",&j);
