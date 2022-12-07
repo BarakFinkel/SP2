@@ -19,7 +19,7 @@ int main(void){
             printf("go into first method");
             temp = initMat(mat);
             temp = setShortMat(mat, shortmat);
-        }
+        } 
         
         else if (c == 'B')
         {       

@@ -3,7 +3,7 @@
 
 //The function used for initializing the matrice:
 
-int initMat(int mat[10][10])
+int initMat(int** mat)
 {
     
     for(int i=0; i<10; i++){

@@ -20,7 +20,7 @@ $(MAIN): main.c my_mat.h # the main object file
 	$(CC) $(FLAGS) -fPIC -c main.c -lm
 
 $(MYMAT): my_mat.c my_mat.h # makes the object file from the source file
-	$(CC) $(FLAGS) -fPIC -c my_mat.c -lm
+	$(CC) $(FLAGS) -fPIC -c my_mat.c my_mat.h -lm
 
 .PHONY: clean all
 
