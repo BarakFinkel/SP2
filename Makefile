@@ -11,7 +11,7 @@ FLAGS=-Wall
 all: connections
 
 connections: $(MAIN) my_mat.a # the main file. using the static liabrary
-	$(CC) $(FLAGS) -o mains $(MAIN) -lm
+	$(CC) $(FLAGS) -o mains $(MAIN) my_mat.a -lm
 
 my_mat.a: $(MYMAT) # makes the static liabrary from the object file
 	$(AR) -rcs my_mat.a $(MYMAT)

@@ -8,13 +8,13 @@ int initMat(int mat[][10])
     
     for(int i=0; i<10; i++){
         
-        for(int j=i; j<10 ;j++){
+        for(int j=0; j<10 ;j++){
             
             if (i==j){ 
                 mat[i][j] = 0;
                 continue;
             }    
-            printf("Please enter the value of mat[%d][%d] / mat[%d][%d]: ",i,j,j,i);
+            
             int temp;
             scanf("%d", &temp);
             mat[i][j] = temp;
@@ -70,8 +70,8 @@ int setShortMat(int mat[][10], int shortmat[][10])
 
 int routeExist(int shortmat[][10], int a, int b)
 {
-    if ( shortmat[a][b] == 0 )  { printf("False."); }
-    else                        { printf("False."); }
+    if ( shortmat[a][b] == 0 )  { printf("False"); }
+    else                        { printf("True"); }
 
     return 0;
 }
