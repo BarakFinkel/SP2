@@ -1,18 +1,18 @@
-#include "my_mat.h"
 #include <stdio.h>
-#define N 4
+#include "my_mat.h"
 
 int main(void){
-    
+
     char c = ' ';
-    int mat[N][N];
-    int shortmat[N][N];
-    int temp;           // variable just for returning 0 values when a function ends.
+    int mat[10][10];
+    int shortmat[10][10];
+    int temp;             // variable just for returning 0 values when a function ends.
 
     while(c != 'D')
     {
         
-        scanf("%c", &c);
+        printf("Please enter your choice: ");
+        scanf("%c",&c);
 
         if (c == 'A')
         {
@@ -25,8 +25,8 @@ int main(void){
         {       
             printf("go into second method");
             int i,j;
-            scanf('%d',&i);
-            scanf('%d',&j);
+            scanf("%d",&i);
+            scanf("%d",&j);
 
             temp = routeExist(shortmat, i, j);
         }
@@ -35,14 +35,15 @@ int main(void){
         {
             printf("go into third method");
             int i,j;
-            scanf('%d',&i);
-            scanf('%d',&j);
+            scanf("%d",&i);
+            scanf("%d",&j);
 
             temp = shortRoute(shortmat, i, j);
         }
     }
     
-    return 0;
+    temp = 0;
+    return temp;
 }
 
 // Path: /mnt/c/Users/Selfisher/Documents/GitHub/SP2

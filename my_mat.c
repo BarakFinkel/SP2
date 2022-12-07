@@ -1,14 +1,14 @@
 #include <stdio.h>
-#define N 4
+#include "my_mat.h"
 
 //The function used for initializing the matrice:
 
-int initMat(int mat[N][N])
+int initMat(int mat[10][10])
 {
     
-    for(int i=0; i<N; i++){
+    for(int i=0; i<10; i++){
         
-        for(int j=i; j<N ;j++){
+        for(int j=i; j<10 ;j++){
             
             if (i==j){ 
                 mat[i][j] = 0;
@@ -25,21 +25,21 @@ int initMat(int mat[N][N])
     return 0;
 }
 
-int setShortMat(int mat[N][N], int shortmat[N][N])
+int setShortMat(int mat[10][10], int shortmat[10][10])
 {
-    for( int i=0 ; i<N ; i++ )
+    for( int i=0 ; i<10 ; i++ )
     {
-        for( int j=0 ; j<N ; j++)
+        for( int j=0 ; j<10 ; j++)
         {
             shortmat[i][j] = mat[i][j];
         }
     }
 
-    for( int k=0 ; k<N ; k++ )
+    for( int k=0 ; k<10 ; k++ )
     {
-        for( int i=0 ; i<N ; i++ )
+        for( int i=0 ; i<10 ; i++ )
         {
-            for( int j=i+1 ; j<N ; j++ )
+            for( int j=i+1 ; j<10 ; j++ )
             {
                 if( shortmat[i][j] == 0 )
                 {
@@ -68,7 +68,7 @@ int setShortMat(int mat[N][N], int shortmat[N][N])
     return 0;
 }
 
-int routeExist(int shortmat[N][N], int a, int b)
+int routeExist(int shortmat[10][10], int a, int b)
 {
     if ( shortmat[a][b] == 0 )  { printf("False."); }
     else                        { printf("False."); }
@@ -76,7 +76,7 @@ int routeExist(int shortmat[N][N], int a, int b)
     return 0;
 }
 
-int shortRoute(int shortmat[N][N], int a, int b)
+int shortRoute(int shortmat[10][10], int a, int b)
 {
     if ( shortmat[a][b] == 0 ) { printf("%d\n", -1); } 
     else                       { printf("%d\n", shortmat[a][b]); }
