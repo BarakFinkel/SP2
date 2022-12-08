@@ -16,29 +16,27 @@ int main(void){
 
         if (c == 'A')
         {
-            printf("go into first method");
             temp = initMat(mat);
-            temp = setShortMat(mat, shortmat);
+            temp = setShortMat(mat, shortmat);            
         } 
         
         else if (c == 'B')
         {       
-            printf("go into second method");
             int i,j;
             scanf("%d",&i);
             scanf("%d",&j);
 
             temp = routeExist(shortmat, i, j);
+            printf("%d", temp);
         }
         
         else if (c == 'C')
         {
-            printf("go into third method");
             int i,j;
             scanf("%d",&i);
             scanf("%d",&j);
-
             temp = shortRoute(shortmat, i, j);
+            printf("%d", temp);
         }
     }
     
