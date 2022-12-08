@@ -25,7 +25,6 @@ int main(void){
             scanf("%d",&j);
 
             temp = routeExist(shortmat, i, j);
-            printf("%d", temp);
         }
         
         else if (c == 'C')
@@ -34,7 +33,6 @@ int main(void){
             scanf("%d",&i);
             scanf("%d",&j);
             temp = shortRoute(shortmat, i, j);
-            printf("%d", temp);
         }
     }
     
