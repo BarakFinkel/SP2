@@ -9,9 +9,7 @@ int main(void){
     int temp;             // variable just for returning 0 values when a function ends.
 
     while(c != 'D')
-    {
-        
-        printf("Please enter your choice: ");
+    {       
         scanf("%c",&c);
 
         if (c == 'A')
